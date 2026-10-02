@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Quiet Path: Build a Life of Discipline, Faith, and Focus</title>
+    <meta name="description"
+        content="A free book on the daily habits that align spirit, mind, and body. Download it and join the live community chat.">
+    <style>
+        :root {
+            --navy: #0A1F2E;
+            --off: #F5F3EF;
+            --gold: #C9A227;
+            --bg: var(--off);
+            --fg: var(--navy);
+            --muted: #4a5a66;
+            --line: rgba(10, 31, 46, .18);
+            --panel: #fff;
+            --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+            --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root {
+                --bg: var(--navy);
+                --fg: var(--off);
+                --muted: #a9b6bf;
+                --line: rgba(245, 243, 239, .2);
+                --panel: #10293b
+            }
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: var(--sans);
+            line-height: 1.65;
+            font-size: 1.0625rem;
+            -webkit-font-smoothing: antialiased
+        }
+
+        .wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 1.5rem
+        }
+
+        section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--line)
+        }
+
+        section.hero {
+            border-top: 0;
+            padding-top: 5rem;
+            text-align: center
+        }
+
+        h1,
+        h2 {
+            font-family: var(--serif);
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 1rem
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            letter-spacing: -.01em
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem)
+        }
+
+        p {
+            margin: 0 0 1rem
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 34em;
+            margin: 0 auto 2rem
+        }
+
+        .path {
+            display: block;
+            margin: 0 auto 2rem;
+            width: 48px;
+            height: 90px
+        }
+
+        .path path {
+            fill: none;
+            stroke: var(--gold);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 140;
+            stroke-dashoffset: 140;
+            animation: draw 2.2s ease-out .2s forwards
+        }
+
+        .path circle {
+            fill: var(--gold);
+            opacity: 0;
+            animation: fade .6s ease 2s forwards
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0
+            }
+        }
+
+        @keyframes fade {
+            to {
+                opacity: 1
+            }
+        }
+
+        .btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            font: 600 1rem var(--sans);
+            padding: .9rem 1.6rem;
+            border-radius: 4px;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 1.1rem;
+            padding: 1.05rem 2rem
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(201, 162, 39, .35)
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--fg)
+        }
+
+        .btn-outline:hover {
+            background: rgba(201, 162, 39, .15)
+        }
+
+        .btn[disabled],
+        .btn[aria-disabled="true"] {
+            opacity: .45;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px
+        }
+
+        .proof {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 1.25rem 0;
+            border-top: 1px solid var(--line);
+            font-size: .9rem;
+            color: var(--muted)
+        }
+
+        .proof span {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .proof strong {
+            color: var(--fg);
+            font-weight: 600
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #2fbf71;
+            position: relative
+        }
+
+        .dot::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: #2fbf71;
+            animation: pulse 1.8s ease-out infinite
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                opacity: .7
+            }
+
+            to {
+                transform: scale(2.8);
+                opacity: 0
+            }
+        }
+
+        ul.learn {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 0
+        }
+
+        ul.learn li {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: .9rem 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        ul.learn li:last-child {
+            border-bottom: 0
+        }
+
+        ul.learn svg {
+            flex: none;
+            width: 22px;
+            height: 22px;
+            margin-top: .2rem;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        blockquote {
+            margin: 0 0 1.5rem;
+            padding: 0 0 0 1.25rem;
+            border-left: 3px solid var(--gold);
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            line-height: 1.55
+        }
+
+        blockquote footer {
+            font: .9rem var(--sans);
+            color: var(--muted);
+            margin-top: .4rem
+        }
+
+        .final {
+            text-align: center
+        }
+
+        .small {
+            font-size: .9rem;
+            color: var(--muted);
+            margin-top: 1rem
+        }
+
+        footer.site {
+            border-top: 1px solid var(--line);
+            padding: 2rem 0 3rem;
+            text-align: center;
+            font-size: .9rem;
+            color: var(--muted)
+        }
+
+        footer.site a {
+            color: var(--fg)
+        }
+
+        /* modal */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 14, 21, .78);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 50
+        }
+
+        .overlay.open {
+            display: flex;
+            animation: fade2 .2s ease
+        }
+
+        @keyframes fade2 {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .modal {
+            position: relative;
+            background: var(--panel);
+            color: var(--fg);
+            width: 100%;
+            max-width: 480px;
+            max-height: 92vh;
+            overflow: auto;
+            border: 1px solid var(--line);
+            border-top: 3px solid var(--gold);
+            border-radius: 6px;
+            padding: 2rem 1.5rem 1.75rem
+        }
+
+        .modal h2 {
+            font-size: 1.5rem
+        }
+
+        .close {
+            position: absolute;
+            top: .6rem;
+            right: .6rem;
+            width: 40px;
+            height: 40px;
+            border: 0;
+            background: transparent;
+            color: var(--fg);
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+            border-radius: 4px
+        }
+
+        .close:hover {
+            background: rgba(201, 162, 39, .2)
+        }
+
+        .step {
+            margin: 1.25rem 0
+        }
+
+        .step-label {
+            font-weight: 600;
+            font-size: .95rem;
+            margin-bottom: .5rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .done {
+            color: #2fbf71;
+            display: none
+        }
+
+        .step.ok .done {
+            display: inline
+        }
+
+        .gbtn {
+            width: 100%;
+            background: #fff;
+            color: #1f1f1f;
+            border: 1px solid #dadce0;
+            font-weight: 500
+        }
+
+        .gbtn:hover {
+            background: #f6f8fb
+        }
+
+        .rules {
+            width: 100%
+        }
+
+        .modal .btn-primary {
+            width: 100%
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-delay: 0s !important;
+                transition-duration: .01ms !important
+            }
+
+            .path path {
+                stroke-dashoffset: 0
+            }
+
+            .path circle {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <svg class="path" viewBox="0 0 48 90" aria-hidden="true">
+                    <path d="M24 88 C24 70 10 62 10 46 S38 30 24 10" />
+                    <circle cx="24" cy="6" r="3" />
+                </svg>
+                <h1>The Quiet Path: Build a Life of Discipline, Faith, and Focus</h1>
+                <p class="lead">Discover the daily habits that align your spirit, mind, and body — and learn how to stay
+                    consistent for the long haul.</p>
+                <div class="btns">
+                    <a class="btn btn-primary" href="#download" id="heroDownload">Download the Free Book</a>
+                    <button class="btn btn-outline" type="button" data-open-chat aria-haspopup="dialog">Join the Live
+                        Chat</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrap">
+            <div class="proof" aria-label="Community numbers">
+                <span><strong>300,000</strong> Subscribers</span>
+                <span><i class="dot" aria-hidden="true"></i><strong>240,000</strong> Online Now</span>
+            </div>
+        </div>
+
+        <section id="learn">
+            <div class="wrap">
+                <h2>What you’ll learn</h2>
+                <ul class="learn">
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3v18M6 9h12" />
+                        </svg>How to anchor your day in daily Mass</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+                        </svg>The power of early mornings and silence</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3 12h18M6 8v8M18 8v8M3 10v4M21 10v4" />
+                        </svg>Why the gym and macros are spiritual disciplines</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM9 9h6M9 13h4" />
+                        </svg>How to journal your soul, not just your trades</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M5.6 5.6l12.8 12.8" />
+                        </svg>Fasting from social media, games, and distractions</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 18c4 0 4-12 8-12s4 12 8 12" />
+                        </svg>The secret to staying consistent for years</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="wrap">
+                <h2>About the book</h2>
+                <p>This is not a quick fix. It is a quiet, practical guide for anyone who wants to build a life that
+                    lasts. Whether you are a trader, a worker, a parent, or a seeker, these pages will help you find
+                    focus, peace, and purpose.</p>
+                <p>You will not find hype here. Each chapter takes one habit, explains why it matters, and shows you how
+                    to start small and keep going.</p>
+                <p>Read it in an evening. Practice it for a lifetime.</p>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="wrap">
+                <h2>What readers say</h2>
+                <!-- Placeholder quotes: replace with real testimonials. -->
+                <blockquote>“Simple, honest, and it stuck. Six months in, my mornings look completely different.”
+                    <footer>Reader, placeholder</footer>
+                </blockquote>
+                <blockquote>“I stopped chasing motivation and started keeping small promises. That changed everything.”
+                    <footer>Reader, placeholder</footer>
+                </blockquote>
+                <blockquote>“No fluff. I finished it in one sitting and started the same night.”<footer>Reader,
+                        placeholder</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="download" class="final">
+            <div class="wrap">
+                <h2>Ready to walk the quiet path?</h2>
+                <a class="btn btn-primary" href="the-quiet-path.pdf" download="the-quiet-path.pdf">Download the Free
+                    Book</a>
+                <p class="small">No spam. No pressure. Just a practical guide.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site">
+        <div class="wrap">
+            <p>© 2026 The Quiet Path. All rights reserved.</p>
+            <p><a href="mailto:hello@thequietpath.com">Contact</a></p>
+        </div>
+    </footer>
+
+    <div class="overlay" id="chatOverlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="chatTitle" aria-describedby="chatDesc">
+            <button class="close" type="button" id="chatClose" aria-label="Close dialog">&times;</button>
+            <h2 id="chatTitle">Join the Live Chat</h2>
+            <p id="chatDesc">Sign in with Google to access the community chat. You must download and review the chat
+                rules before entering.</p>
+
+            <div class="step" id="step1">
+                <div class="step-label">Step 1 <span class="done" aria-hidden="true">✓ Signed in</span></div>
+                <button class="btn gbtn" type="button" id="googleBtn" aria-label="Sign in with Google">
+                    <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+                        <path fill="#EA4335"
+                            d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z" />
+                        <path fill="#4285F4"
+                            d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z" />
+                        <path fill="#FBBC05"
+                            d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z" />
+                        <path fill="#34A853"
+                            d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z" />
+                    </svg>
+                    Sign in with Google
+                </button>
+            </div>
+
+            <div class="step" id="step2">
+                <div class="step-label">Step 2 <span class="done" aria-hidden="true">✓ Downloaded</span></div>
+                <a class="btn btn-outline rules" id="rulesLink" href="chat-rules.pdf" download="chat-rules.pdf">Download
+                    Chat Rules (PDF)</a>
+            </div>
+
+            <div class="step">
+                <div class="step-label">Step 3</div>
+                <button class="btn btn-primary" type="button" id="enterBtn" disabled aria-disabled="true"
+                    aria-label="Enter Chat (complete steps 1 and 2 first)">Enter Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var overlay = document.getElementById('chatOverlay');
+            var dialog = overlay.querySelector('.modal');
+            var enterBtn = document.getElementById('enterBtn');
+            var state = { signedIn: false, rules: false };
+            var lastFocus = null;
+
+            // Placeholder: connect real Google Identity Services here.
+            window.handleGoogleSignIn = function () {
+                console.log('Google sign-in clicked');
+                state.signedIn = true; // remove once real auth sets this after a successful sign-in
+                update();
+            };
+
+            function update() {
+                document.getElementById('step1').classList.toggle('ok', state.signedIn);
+                document.getElementById('step2').classList.toggle('ok', state.rules);
+                var ready = state.signedIn && state.rules;
+                enterBtn.disabled = !ready;
+                enterBtn.setAttribute('aria-disabled', String(!ready));
+                enterBtn.setAttribute('aria-label', ready ? 'Enter Chat' : 'Enter Chat (complete steps 1 and 2 first)');
+            }
+
+            function focusables() {
+                return dialog.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])');
+            }
+
+            function openChat() {
+                lastFocus = document.activeElement;
+                overlay.classList.add('open');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                document.getElementById('googleBtn').focus();
+            }
+
+            function closeChat() {
+                overlay.classList.remove('open');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+
+            document.querySelectorAll('[data-open-chat]').forEach(function (b) { b.addEventListener('click', openChat); });
+            document.getElementById('chatClose').addEventListener('click', closeChat);
+            overlay.addEventListener('mousedown', function (e) { if (e.target === overlay) closeChat(); });
+            document.getElementById('googleBtn').addEventListener('click', window.handleGoogleSignIn);
+            document.getElementById('rulesLink').addEventListener('click', function () { state.rules = true; update(); });
+            enterBtn.addEventListener('click', function () {
+                if (enterBtn.disabled) return;
+                console.log('Enter chat clicked'); // replace with your chat URL
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!overlay.classList.contains('open')) return;
+                if (e.key === 'Escape') { closeChat(); return; }
+                if (e.key === 'Tab') {
+                    var f = focusables();
+                    if (!f.length) return;
+                    var first = f[0], last = f[f.length - 1];
+                    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+                }
+            });
+
+            // Smooth scroll to download section
+            document.getElementById('heroDownload').addEventListener('click', function (e) {
+                e.preventDefault();
+                var t = document.getElementById('download');
+                t.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+            });
+        })();
+    </script>
+</body>
+
+</html>
